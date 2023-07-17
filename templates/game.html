@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Noto+Serif:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+    <title>¿ Que es 🇪🇸 en 🇬🇧 ? </title>
+<body>
+
+    <header>
+
+        <div class="result_div centerbox">
+            {% if result_message %}
+                {% if result_message == "¡ muy bien ! (+5)" %}
+                    <p class="result result_green">{{ result_message }}</p>
+        
+                {% else %}
+                    <p class="result result_red">{{ result_message }}</p>
+                {% endif %}
+        
+            {% endif %}
+        </div>
+        
+        
+            <p class="points centerbox">Score: {{ score }}</p>
+        
+
+    </header>
+    <div class="main">
+        <h1 class="title">¿ Que es   <span class="spanish_word">{{ spanish_word }}</span>   en ingles ? </h1>
+            <form method="POST" autocomplete="off">
+                <div class="form_div">
+                    <!-- <label for="answer">Your Answer:</label> -->
+                    <input type="text" id="answer" name="answer" required>
+                    <button type="submit" class="button">Submit</button>
+                </div>
+                
+            </form>
+        
+            
+    </div>
+    <footer>
+        <a class="centerbox" href="https://www.github.com/pdeges">github</a>
+    </footer>
+    
+    
+    
+    
+</body>
+</html>
